@@ -2,6 +2,8 @@
 RbSerialDevice
 copyright Joshua Shapiro 2009, 2012
 
+==Introduction
+
 This library provides a Ruby interface for communicating with laboratory equipment over a serial connection.
 
 Many pieces of lab equipment implement a call and response interface over a serial connection such as: 
@@ -15,7 +17,20 @@ Many pieces of lab equipment implement a call and response interface over a seri
   :set:value: 1.0
   OK
 
-The purpose of this library is to encapsulate this interface in a Ruby object.  
+The purpose of this library is to encapsulate this interface in a Ruby object.   The Base class implements two accessor methods +sd_reader+ and +sd_writer+ that map the serial device commands to instance methods. 
+
+*A word of warning*
+This library is old and does not adhere to standard Ruby conventions.  It is partially written in c and
+has been tested (not recently) on Mac and Linux, but not windows.  The plan is to update it someday, but probably not soon.
+
+==Installation
+
+  ruby extconf.rb
+  make
+
+
+
+==Usage
 
 RbSerialDevice creates a Base class that implements two accessor methods +sd_reader+ and +sd_writer+ that map 
 the serial device commands to instance methods for the class.  Here is an example
